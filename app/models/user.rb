@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum :role, ["normal_user", "admin"]
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :password, presence: true
+  
 end
