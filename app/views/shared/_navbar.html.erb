@@ -7,7 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ms-auto" >
     <li><%= link_to "Posts", posts_path, class:"nav-link"  %></li>
+    <% if user_signed_in?  %>
     <li><%= link_to "Create user", new_user_registration_path, class: "nav-link" %></li>
+    <% end %>
     </ul>
       <ul class="navbar-nav ms-auto">
 
@@ -20,7 +22,7 @@
             Hola <%= current_user.email %>
             <% end %>
             <% else %>
-            Inicia Sesión o Regístrate
+            Inicia Sesión
             <% end %>
           </a>
           <ul class="dropdown-menu">
@@ -28,6 +30,7 @@
             <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
             
             <% else %>
+            
             <li><%= link_to 'Registro', new_user_registration_path, class: 'dropdown-item'%></li>
             <li><%= link_to 'Iniciar sesión', new_user_session_path, class: 'dropdown-item'%></li>
             <li><hr class="dropdown-divider"></li>

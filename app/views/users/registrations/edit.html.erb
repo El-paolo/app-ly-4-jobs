@@ -15,9 +15,8 @@
 
   <div class="field">
     <%= f.label :phone %><br />
-    <%= f.integer_field :phone, autofocus: true, autocomplete: "phone" %>
-  </div>clear
-  
+    <%= f.number_field :phone, autofocus: true, autocomplete: "phone" %>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
