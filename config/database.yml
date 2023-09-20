@@ -88,3 +88,4 @@ production:
   database: app_ly_4_job_production
   username: app_ly_4_job
   password: <%= ENV["APP_LY_4_JOB_DATABASE_PASSWORD"] %>
+  url: <%=ENV["DATABASE_URL"]%>
